@@ -13,14 +13,30 @@ Your task is to design and implement a solution to model and track this chain of
 # Requirements:
 
 1. Login:
+  <div align="center">
+    <img src="./assets/AT-01.png" width="50%">
+  </div>
+  <br>
+
   - The system must require the user to log in before accessing the app.
   - The user should enter a username and password for authentication.
     
 2. Display and Manage Referrals:
+  <div align="center" style="display: flex; justify-content: center; gap: 1rem">
+    <img src="./assets/AT-02.png" width="50%">
+    <img src="./assets/AT-03.png" width="50%">
+  </div>
+  <br>
+
   - The referral tree should be visualized in a grid or table format, where each agent and their direct referrals are shown at the appropriate levels.
   - The tree should be easily navigable to allow users to quickly see the hierarchy of referrals.
 
 3. Add New Agents:
+  <div align="center">
+    <img src="./assets/AT-04.png" width="50%">
+  </div>
+  <br>
+
   - The system must allow new agents to be added at any level of the tree.
   - A new agent can either be added as a direct referral of an existing agent, or inserted into any existing position within the tree.
 

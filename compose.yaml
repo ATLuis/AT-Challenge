@@ -1,0 +1,19 @@
+name: at-test
+
+services:
+  db-msserver:
+    image: mcr.microsoft.com/azure-sql-edge
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_USER: test
+      MSSQL_SA_PASSWORD: gVbzezrU3dmRY95
+    ports:
+      - "1433:1433"
+
+  db-postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: gVbzezrU3dmRY95
+    ports:
+      - "5432:5432"
