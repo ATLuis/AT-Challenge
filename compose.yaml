@@ -1,19 +1,40 @@
-name: at-test
+name: at-challenge
 
 services:
-  db-msserver:
-    image: mcr.microsoft.com/azure-sql-edge
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/workspace
     environment:
-      ACCEPT_EULA: Y
-      MSSQL_USER: test
-      MSSQL_SA_PASSWORD: gVbzezrU3dmRY95
+      - NODE_ENV=development
+  # app:
+  #   image: mcr.microsoft.com/vscode/devcontainers/javascript-node:18
+  #   volumes:
+  #     - .:/workspace
+  #   command: /bin/sh -c "while sleep 1000; do :; done"
+  #   environment:
+  #     - NODE_ENV=development
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "challenge"
     ports:
       - "1433:1433"
-
-  db-postgres:
+  # sqlserver:
+  #   image: mcr.microsoft.com/azure-sql-edge
+  #   environment:
+  #     ACCEPT_EULA: Y
+  #     MSSQL_USER: at
+  #     MSSQL_SA_PASSWORD: challenge
+  #   ports:
+  #     - "1433:1433"
+  postgres:
     image: postgres
     environment:
-      POSTGRES_USER: test
-      POSTGRES_PASSWORD: gVbzezrU3dmRY95
+      POSTGRES_USER: at
+      POSTGRES_PASSWORD: challenge
     ports:
       - "5432:5432"

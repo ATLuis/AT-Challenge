@@ -1,0 +1,26 @@
+{
+    "name": "at-challenge",
+    // "features": {
+    //     "dotnet": {
+    //         "version": "2.1"
+    //     }
+    // },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-dotnettools.csharp",
+                "dbaeumer.vscode-eslint"
+            ],
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            }
+        }
+    },
+
+    "workspaceFolder": "/workspace",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+    ],
+    "dockerComposeFile": ["${localWorkspaceFolder}/compose.yaml"],
+    "service": "app"
+}
