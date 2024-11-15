@@ -9,10 +9,12 @@
         "vscode": {
             "extensions": [
                 "ms-dotnettools.csharp",
+                "ms-dotnettools.csdevkit",
                 "dbaeumer.vscode-eslint"
             ],
             "settings": {
-                "terminal.integrated.shell.linux": "/bin/bash"
+                "terminal.integrated.shell.linux": "/bin/bash",
+                "omnisharp.useGlobalMono": "always"
             }
         }
     },
