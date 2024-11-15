@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using net.Repositories;
 
 namespace net
 {
@@ -26,6 +27,7 @@ namespace net
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddScoped<ITestRepository, TestRepository>(); // Add this line
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
