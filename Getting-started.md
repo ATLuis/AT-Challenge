@@ -55,8 +55,8 @@ You need to run 3 separate apps:
     
     ```bash
     cd app/net
-    npm dotnet restore
-    npm dotnet run
+    dotnet restore
+    dotnet run
     ```
 
 2. The Node.js Service

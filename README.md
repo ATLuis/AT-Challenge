@@ -70,8 +70,9 @@ When you're ready to submit your work, please follow these steps:
 - Fork the repository.
 - Implement your solution.
 - Create a Pull Request to our repository.
-- Submit your PR within 24 hours of forking the repo :exclamation:.
+- Submit your PR within 4 hours :exclamation: of forking the repo.
+- Communicate with us via the chat channel #Code-Challenge in (Glip)[https://cliq.zoho.com/company/710901440/channels/codechallenge] for any questions or clarifications.
 
-There are no strict limitations on your implementation. You are free to use your preferred programming paradigm, modularization, and security best practices. The goal is to deliver a clean, well-structured, and scalable solution.
+There are no strict limitations on your implementation. You are free to use your preferred programming paradigm, modularization, and security practices. The goal is to deliver a clean, well-structured, and scalable solution.
 
 If you have any questions or need further clarification, feel free to ask. We’re here to help!
