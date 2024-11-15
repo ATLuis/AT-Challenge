@@ -27,6 +27,19 @@ namespace net
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            // Add CORS services
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader();
+                    });
+            });
+
             services.AddScoped<ITestRepository, TestRepository>(); // Add this line
         }
 
@@ -43,6 +56,10 @@ namespace net
             }
 
             app.UseHttpsRedirection();
+
+            // Use CORS policy
+            app.UseCors("AllowAllOrigins");
+
             app.UseMvc();
         }
     }
