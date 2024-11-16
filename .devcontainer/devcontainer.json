@@ -1,0 +1,17 @@
+{
+    "name": "at-challenge",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash",
+                "omnisharp.useGlobalMono": "always"
+            }
+        }
+    },
+    "workspaceFolder": "/app",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"
+    ],
+    "dockerComposeFile": ["${localWorkspaceFolder}/compose.yaml"],
+    "service": "app"
+}
