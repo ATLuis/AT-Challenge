@@ -4,6 +4,7 @@ import { makeExecutableSchema } from "@graphql-tools/schema";
 import { typeDefs } from "./schema/type-definitions";
 import { resolvers } from "./resolvers";
 import cors from "cors";
+import { authenticateJWT } from "./utils/jwt";
 
 const app = express();
 app.use(cors())
@@ -16,8 +17,12 @@ const schema = makeExecutableSchema({
 
 app.use(
   "/graphql",
+  authenticateJWT,
   createHandler({
     schema,
+    // context:({req}:any)=>{
+    //   return { user: req.user?? null };
+    // }
   })
 );
 

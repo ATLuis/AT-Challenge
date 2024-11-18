@@ -17,7 +17,7 @@ export function LoginPage() {
       <Card as={Form} className="w-1/2 lg:w-1/3" method="POST">
         <CardHeader className="flex-col justify-center gap-4">
           <Image src="/brand.png" width={140} />
-          <h1 className="font-bold m-auto">AGENT REFERRAL SYSTEM</h1>
+          <h1 className="font-bold m-auto">aGENT REFERRAL SYSTEm</h1>
           <ApiStatus />
         </CardHeader>
         <CardBody>
