@@ -19,9 +19,10 @@ const columns: TableColumn<AgentReferral>[] = [
 
 interface ReferralTableProps {
   data: AgentReferral[];
+  onDelete: (id: number) => void; 
 }
 
-export function ReferralTable({ data }: ReferralTableProps) {
+export function ReferralTable({ data,onDelete }: ReferralTableProps) {
   return (
     <Table
       columns={columns}
@@ -37,7 +38,22 @@ function ActionCell(_: CellProps<AgentReferral>) {
 
   const handleAdd = () => {};
 
-  const handleDelete = () => {};
+  const handleDelete = async () => {
+  
+    try {
+      const response = await fetch(`http://localhost:5000/api/agents/${data.id}`, {
+        method: "DELETE",
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to delete agent");
+      }
+
+      onDelete(dataItem.id);
+    } catch (error) {
+      alert("Error deleting agent");
+    }
+  };
 
   return (
     <>

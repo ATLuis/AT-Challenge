@@ -14,7 +14,19 @@ export const AppDataSource = new DataSource({
 });
 
 AppDataSource.initialize()
-  .then(() => {
-    console.log("Database connected");
+  .then(async () => {
+    const userCount = await User.count();
+    if (userCount === 0) {
+      console.log("usuario por defecto...");
+      const defaultUser = User.create({
+        username: "admin",
+        password: "admin123", 
+        email: "admin@example.com",
+      });
+      await defaultUser.save();
+      console.log("Usuario por defecto creado: ", defaultUser);
+    } else {
+      console.log(`Usuarios existentes encontrados: ${userCount}`);
+    }
   })
-  .catch((error) => console.error("Database connection error", error));
+  .catch((error) => console.error("Error al conectar a la base de datos:", error));

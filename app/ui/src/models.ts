@@ -1,3 +1,9 @@
 export type AgentReferral =  {
-  // TODO: implement the model
+  lastName: any;
+  firstName: any;
+  id: number;            
+  fullName: string;      
+  username: string;      
+  phone: string;        
+  status: string;   
 }
