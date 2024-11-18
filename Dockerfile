@@ -9,6 +9,12 @@ RUN apt-get update
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get install -y nodejs
 
+# Install .NET Core 6 SDK needed for the Language Server
+RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && \
+dpkg -i packages-microsoft-prod.deb && \
+apt-get update && \
+apt-get install -y dotnet-sdk-6.0
+
 WORKDIR /app
 
 COPY . .

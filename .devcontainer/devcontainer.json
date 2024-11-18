@@ -5,7 +5,10 @@
             "settings": {
                 "terminal.integrated.shell.linux": "/bin/bash",
                 "omnisharp.useGlobalMono": "always"
-            }
+            },
+            "extensions": [
+                "ms-dotnettools.csdevkit"
+            ]
         }
     },
     "workspaceFolder": "/app",
