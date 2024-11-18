@@ -33,9 +33,13 @@ export function ReferralTable({ data }: ReferralTableProps) {
 }
 
 function ActionCell(_: CellProps<AgentReferral>) {
+  
   const handleView = () => {};
 
-  const handleAdd = () => {};
+  const handleAdd = () => {
+    // open modal
+
+  };
 
   const handleDelete = () => {};
 
