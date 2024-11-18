@@ -7,7 +7,9 @@
                 "omnisharp.useGlobalMono": "always"
             },
             "extensions": [
-                "ms-dotnettools.csdevkit"
+                "ms-dotnettools.csdevkit",
+                "ms-dotnettools.csharp",
+                "ms-dotnettools.vscode-dotnet-runtime"
             ]
         }
     },
@@ -15,6 +17,8 @@
     "mounts": [
         "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"
     ],
-    "dockerComposeFile": ["${localWorkspaceFolder}/compose.yaml"],
+    "dockerComposeFile": [
+        "${localWorkspaceFolder}/compose.yaml"
+    ],
     "service": "app"
 }
