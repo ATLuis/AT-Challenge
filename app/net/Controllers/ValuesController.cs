@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using net.Model;
+using net.Repositories;
 
 namespace net.Controllers
 {
@@ -10,36 +9,52 @@ namespace net.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+    private readonly IValuesRepository _valuesRepository;
+        public ValuesController(IValuesRepository  valuesRepository)
         {
-            return new string[] { "value1", "value2" };
+            // Constructor logic here
+            _valuesRepository =  valuesRepository;
+        }
+        // GET api/values
+        [HttpGet("{userId}")]
+        public async Task<ActionResult> Get(int userId)
+        {
+            var rs = await _valuesRepository.GetAgent(userId);
+            if(rs is null){
+                return NotFound("agent not found");
+            }
+            return Ok(rs);
+
         }
 
         // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        [HttpGet("child/{userId}")]
+        public async Task<ActionResult<string>> GetChilds(int userId)
         {
-            return "value";
+            var rs = await _valuesRepository.ListAgent(userId);
+            return Ok(rs);
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async void Post([FromBody] Agent agent)
         {
+            await _valuesRepository.Create(agent);
         }
 
         // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("{userId}")]
+        public async void Put(int userId, [FromBody] Agent agent)
         {
+            agent.UserId=userId;
+            await _valuesRepository.Update(agent);
         }
 
         // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{userId}")]
+        public async void Delete(int userId)
         {
+            await _valuesRepository.Delete(userId);
         }
     }
 }
