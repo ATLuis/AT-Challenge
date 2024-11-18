@@ -3,10 +3,18 @@ import { ReferralTable } from "./referral-table";
 import { AddReferralModal } from "./add_referral_modal";
 import { useLoaderData } from "react-router-dom";
 import type { AgentReferral } from "../../models";
+import { useEffect, useState } from "react";
 
 export function HomePage() {
   const data = useLoaderData() as AgentReferral[];
+  const [agents, setAgents] = useState(data);
 
+  useEffect(()=>{
+    setAgents(data.map(agent => ({
+      ...agent,
+      fullName: `${agent!.firstName} ${agent.lastName}`,
+    })))
+  },[])
   const handleLogout = () => {}
 
   return (
@@ -18,7 +26,7 @@ export function HomePage() {
       </div>
 
       <div className="grow">
-        <ReferralTable data={data} />
+        <ReferralTable data={agents}  />
       </div>
     </Page>
   );
