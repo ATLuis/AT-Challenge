@@ -13,33 +13,27 @@ Your task is to design and implement a solution to model and track this chain of
 # Requirements:
 
 1. Login:
-  <div align="center">
-    <img src="./assets/AT-01.png" width="50%">
-  </div>
-  <br>
+  
+    [![Login](https://drive.google.com/thumbnail?sz=w400-h300&id=1wVakR7Jf9Li1-7H6920T6MFsvsa5HGII)](https://lh3.googleusercontent.com/d/1wVakR7Jf9Li1-7H6920T6MFsvsa5HGII)
 
-  - The system must require the user to log in before accessing the app.
-  - The user should enter a username and password for authentication.
-  - When the user logs in, the "status" of the user should be update to "active".
+    - The system must require the user to log in before accessing the app.
+    - The user should enter a username and password for authentication.
+    - When the user logs in, the "status" of the user should be update to "active".
     
 2. Display and Manage Referrals:
-  <div align="center" style="display: flex; justify-content: center; gap: 1rem">
-    <img src="./assets/AT-02.png" width="50%">
-    <img src="./assets/AT-03.png" width="50%">
-  </div>
-  <br>
+  
+    [![Login](https://drive.google.com/thumbnail?sz=w400-h300&id=1KmCFZBx7E_WXFr7wgMRsR9V7ud9bqtN_)](https://lh3.googleusercontent.com/d/1KmCFZBx7E_WXFr7wgMRsR9V7ud9bqtN_)
+    [![Login](https://drive.google.com/thumbnail?sz=w400-h300&id=1XLzFxdhLtw0fI_7LvFFlHHZ9GuF25vkd)](https://lh3.googleusercontent.com/d/1XLzFxdhLtw0fI_7LvFFlHHZ9GuF25vkd)
 
-  - The referral tree should be visualized in a grid or table format, where each agent and their direct referrals are shown at the appropriate levels.
-  - The tree should be easily navigable to allow users to quickly see the hierarchy of referrals.
+    - The referral tree should be visualized in a grid or table format, where each agent and their direct referrals are shown at the appropriate levels.
+    - The tree should be easily navigable to allow users to quickly see the hierarchy of referrals.
 
 3. Add New Agents:
-  <div align="center">
-    <img src="./assets/AT-04.png" width="50%">
-  </div>
-  <br>
+    
+    [![Login](https://drive.google.com/thumbnail?sz=w400-h300&id=14bk3jWh5MjE63UzlvpnXdUIwSDnqk6y8)](https://lh3.googleusercontent.com/d/14bk3jWh5MjE63UzlvpnXdUIwSDnqk6y8)
 
-  - The system must allow new agents to be added at any level of the tree.
-  - A new agent can either be added as a direct referral of an existing agent, or inserted into any existing position within the tree.
+    - The system must allow new agents to be added at any level of the tree.
+    - A new agent can either be added as a direct referral of an existing agent, or inserted into any existing position within the tree.
 
 # Additional Considerations:
 
@@ -49,18 +43,18 @@ Ensure the app is modular and well-structured.
 
 # Tech Stack
 1. Backend (for Login functionality):
-  - NodeJs
-  - Express
-  - GraphQL
-  - PostgreSQL
+    - NodeJs
+    - Express
+    - GraphQL
+    - PostgreSQL
 2. Backend (for Referral Management functionality):
-  - .Net Core
-  - Dapper
-  - Sql Server
+    - .Net Core
+    - Dapper
+    - Sql Server
 3. Frontend (for UI):
-  - React
-  - Typescript
-  - Next UI (optional, it is just a suggestion :wink:)
+    - React
+    - Typescript
+    - Next UI (optional, it is just a suggestion :wink:)
 
 We do provide a `Dockerfile` to help you get started with a dev environment.
 
@@ -72,7 +66,7 @@ When you're ready to submit your work, please follow these steps:
 - Implement your solution.
 - Create a Pull Request to our repository.
 - Submit your PR within 4 hours :exclamation: of forking the repo.
-- Communicate with us via the chat channel #Code-Challenge in (Glip)[https://cliq.zoho.com/company/710901440/channels/ext:devnewhires] for any questions or clarifications.
+- Communicate with us via the chat channel [#DevNewHires](https://cliq.zoho.com/company/710901440/channels/ext:devnewhires) in Glip for any questions or clarifications.
 
 There are no strict limitations on your implementation. You are free to use your preferred programming paradigm, modularization, and security practices. The goal is to deliver a clean, well-structured, and scalable solution.
 
