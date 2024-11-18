@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import { Entity, BaseEntity, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, BaseEntity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity()
 export class User extends BaseEntity {
@@ -7,4 +7,10 @@ export class User extends BaseEntity {
   id!: number;
 
   // add more fields here
+  @Column()
+  username!: string;
+  @Column()
+  password!: string;
+  @Column()
+  status!: string;
 }
