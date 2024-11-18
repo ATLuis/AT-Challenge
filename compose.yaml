@@ -19,8 +19,14 @@ services:
       - "1433:1433"
 
   postgres:
-    image: postgres
+    image: "postgres:alpine"
     environment:
+      POSTGRES_USER: at
       POSTGRES_PASSWORD: "ATChal1enge!"
     ports:
       - "5432:5432"
+    volumes:
+      - "pgdata:/var/lib/postgresql/data"
+      
+volumes:
+  pgdata:

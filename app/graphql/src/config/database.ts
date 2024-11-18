@@ -5,7 +5,7 @@ export const AppDataSource = new DataSource({
   type: "postgres",
   host: "postgres", // name of instance in compose file
   port: 5432,
-  username: "postgres",
+  username: "at",
   password: "ATChal1enge!",
   database: "postgres",
   synchronize: true,
